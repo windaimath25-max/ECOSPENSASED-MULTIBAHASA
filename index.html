@@ -244,6 +244,23 @@
         .btn-eco-board:hover { transform: translateY(-3px); }
         .btn-eco-board:active { transform: translateY(7px); }
 
+        .btn-eco-winsky {
+            display: inline-flex; align-items: center; gap: 14px;
+            background: linear-gradient(180deg, #42a5f5 0%, #1e88e5 50%, #1565c0 100%);
+            border: 5px solid #0d47a1; border-radius: 60px;
+            padding: 18px 48px; font-family: 'Fredoka', sans-serif;
+            font-size: clamp(1.05rem, 2.4vw, 1.35rem); font-weight: 700; color: #ffffff;
+            cursor: pointer; letter-spacing: 3px; text-transform: uppercase; text-decoration: none;
+            box-shadow: 0 10px 0 #0d47a1, 0 18px 32px rgba(13, 71, 161, 0.55);
+            transition: all 0.12s ease; animation: btnPulse3D 2.5s ease-in-out infinite;
+            position: relative; overflow: hidden; z-index: 9999; pointer-events: auto;
+        }
+        .btn-eco-winsky::before { content: ''; position: absolute; top: -50%; left: -100%; width: 60%; height: 200%; background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 70%, transparent 100%); transform: rotate(20deg); animation: btnShine 3s ease-in-out infinite; pointer-events: none; z-index: 1; filter: blur(2px); }
+        .btn-eco-winsky::after { content: ''; position: absolute; top: -50%; left: -100%; width: 40%; height: 200%; background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 200, 0) 30%, rgba(255, 255, 200, 0.7) 50%, rgba(255, 255, 200, 0) 70%, transparent 100%); transform: rotate(20deg); animation: btnShine 3s ease-in-out infinite 0.5s; pointer-events: none; z-index: 1; filter: blur(3px); }
+        .btn-eco-winsky > * { position: relative; z-index: 3; pointer-events: none; }
+        .btn-eco-winsky:hover { transform: translateY(-3px); }
+        .btn-eco-winsky:active { transform: translateY(7px); }
+
         #dashboard { text-align: center; padding: 20px 10px 30px; }
         .logo-container { margin-bottom: 32px; display: flex; justify-content: center; align-items: center; animation: pulseLogo 3s ease-in-out infinite; }
         .logo-container img { max-width: 100%; max-height: 220px; border-radius: 24px; object-fit: contain; filter: drop-shadow(0 12px 30px rgba(46, 125, 50, 0.5)); }
@@ -664,7 +681,7 @@
 </head>
 <body>
 
-<!-- 🎵 MUSIK DIHAPUS: Elemen <audio> dan tombol #musicBtn sudah dihilangkan untuk menghindari plagiarisme -->
+<!-- 🎵 MUSIK DIHAPUS untuk menghindari plagiarisme -->
 
 <div class="lang-selector-wrapper">
     <span class="lang-icon">🌐</span>
@@ -710,6 +727,8 @@
             <div class="cover-feature-item"><span class="feat-icon">🎓</span><span data-i18n="feature_cert">Sertifikat</span></div>
         </div>
         <button type="button" class="btn-start-adventure" id="startAdventureBtn"><span class="btn-text" data-i18n="btn_start_adventure">🚀 MULAI PETUALANGAN</span></button>
+        
+        <!-- GAME BONUS 1: ECO CLASH -->
         <div class="bonus-game-section">
             <div class="bonus-game-card">
                 <div class="bonus-game-header"><span class="bonus-game-logo">🌿</span><div class="bonus-game-name">ECO <span class="clash-tag">CLASH</span></div><span class="bonus-game-logo">🌱</span></div>
@@ -723,6 +742,8 @@
                 <div style="text-align:center;"><a href="https://windaimath25-max.github.io/ECOCLASH-MULTIBAHASA/" target="_blank" rel="noopener noreferrer" class="btn-eco-clash" data-i18n="btn_main_eco_clash">🌿 MAIN ECO CLASH 🌿</a></div>
             </div>
         </div>
+        
+        <!-- GAME BONUS 2: ECO BOARD GAME -->
         <div class="bonus-game-section">
             <div class="bonus-game-card">
                 <div class="bonus-game-header"><span class="bonus-game-logo">🎲</span><div class="bonus-game-name">ECO <span class="clash-tag">BOARD GAME</span></div><span class="bonus-game-logo">🎯</span></div>
@@ -731,6 +752,17 @@
                 <div style="text-align:center;"><a href="https://windaimath25-max.github.io/ECOBOARDGAME-MULTIBAHASA/" target="_blank" rel="noopener noreferrer" class="btn-eco-board" data-i18n="btn_main_eco_board">🎲 MAIN ECO BOARD GAME 🎲</a></div>
             </div>
         </div>
+        
+        <!-- GAME BONUS 3: ECO WIN SKY (NEW) -->
+        <div class="bonus-game-section">
+            <div class="bonus-game-card">
+                <div class="bonus-game-header"><span class="bonus-game-logo">☁️</span><div class="bonus-game-name">ECO <span class="clash-tag">WIN SKY</span></div><span class="bonus-game-logo">🌤️</span></div>
+                <div style="text-align:center;"><span class="bonus-game-badge" data-i18n="badge_game_bonus">🎮 GAME BONUS</span></div>
+                <p class="bonus-game-desc" data-i18n="eco_winsky_desc">Petualangan Seru Menjaga Langit dan Udara Bersih.</p>
+                <div style="text-align:center;"><a href="https://windaimath25-max.github.io/ECOWINSKY/" target="_blank" rel="noopener noreferrer" class="btn-eco-winsky" data-i18n="btn_main_eco_winsky">☁️ MULAI ECO WIN SKY ☁️</a></div>
+            </div>
+        </div>
+        
         <p class="cover-footer-note" style="margin-top:20px;font-size:0.8rem;color:#1b5e20;font-weight:700;font-style:italic;" data-i18n="cover_footer">✨ Klik tombol di atas untuk memulai petualanganmu! ✨</p>
     </div>
 
@@ -834,7 +866,7 @@
 </div>
 
 <script>
-    console.log('🚀 ECO SPENSASED loaded - FINAL v9 NO MUSIC + Multi-Language Mystery Box & Aksi Nyata');
+    console.log('🚀 ECO SPENSASED - v10: NO MUSIC + 3 BONUS GAMES + Multi-Language Mystery Box & Aksi Nyata');
 
     // ============ TRANSLATIONS ============
     const TRANSLATIONS = {
@@ -854,8 +886,9 @@
             btn_start_adventure: "🚀 MULAI PETUALANGAN", badge_game_bonus: "🎮 GAME BONUS",
             eco_clash_desc: "Tantangan Seru Adu Strategi dan Pengetahuan untuk Menyelesaikan Masalah Lingkungan",
             eco_board_desc: "Petualangan Papan Seru dengan Tantangan Lingkungan untuk Menguji Pengetahuan dan Strategimu",
+            eco_winsky_desc: "Petualangan Seru Menjaga Langit dan Udara Bersih.",
             level_beginner_desc: "Soal dasar lingkungan & Adiwiyata", level_amateur_desc: "Soal literasi & numerasi bertema lingkungan", level_pro_desc: "Studi kasus lingkungan & solusi nyata",
-            btn_main_eco_clash: "🌿 MAIN ECO CLASH 🌿", btn_main_eco_board: "🎲 MAIN ECO BOARD GAME 🎲", btn_main_eco_clash_cert: "🌿 MAIN ECO CLASH",
+            btn_main_eco_clash: "🌿 MAIN ECO CLASH 🌿", btn_main_eco_board: "🎲 MAIN ECO BOARD GAME 🎲", btn_main_eco_winsky: "☁️ MULAI ECO WIN SKY ☁️", btn_main_eco_clash_cert: "🌿 MAIN ECO CLASH",
             label_name: "Siapa Namamu?", placeholder_name: "Masukkan nama pahlawan...", btn_mulai: "🚀 Mulai!",
             header_tag: "♻️ Pahlawan Bumi", header_xp: "⭐ XP:", slogan: "Hebat! Kamu benar-benar pahlawan!",
             wooden_sign: "JAGALAH BUMI UNTUK MASA DEPAN",
@@ -928,8 +961,9 @@
             btn_start_adventure: "🚀 START ADVENTURE", badge_game_bonus: "🎮 BONUS GAME",
             eco_clash_desc: "Exciting Challenge of Strategy and Knowledge to Solve Environmental Problems",
             eco_board_desc: "Fun Board Adventure with Environmental Challenges to Test Your Knowledge and Strategy",
+            eco_winsky_desc: "Exciting Adventure to Keep the Sky and Air Clean.",
             level_beginner_desc: "Basic environmental & Adiwiyata questions", level_amateur_desc: "Environmental literacy & numeracy questions", level_pro_desc: "Environmental case studies & real solutions",
-            btn_main_eco_clash: "🌿 PLAY ECO CLASH 🌿", btn_main_eco_board: "🎲 PLAY ECO BOARD GAME 🎲", btn_main_eco_clash_cert: "🌿 PLAY ECO CLASH",
+            btn_main_eco_clash: "🌿 PLAY ECO CLASH 🌿", btn_main_eco_board: "🎲 PLAY ECO BOARD GAME 🎲", btn_main_eco_winsky: "☁️ START ECO WIN SKY ☁️", btn_main_eco_clash_cert: "🌿 PLAY ECO CLASH",
             label_name: "What's Your Name?", placeholder_name: "Enter hero name...", btn_mulai: "🚀 Start!",
             header_tag: "♻️ Earth Hero", header_xp: "⭐ XP:", slogan: "Awesome! You're a true hero!",
             wooden_sign: "SAVE THE EARTH FOR THE FUTURE",
@@ -1002,8 +1036,9 @@
             btn_start_adventure: "🚀 开始冒险", badge_game_bonus: "🎮 奖励游戏",
             eco_clash_desc: "解决环境问题的战略和知识激动人心的挑战",
             eco_board_desc: "有趣的棋盘冒险，用环境挑战考验你的知识和策略",
+            eco_winsky_desc: "保持天空和空气清洁的精彩冒险。",
             level_beginner_desc: "基础环境和 Adiwiyata 问题", level_amateur_desc: "环境素养和算术问题", level_pro_desc: "环境案例研究和真实解决方案",
-            btn_main_eco_clash: "🌿 玩 ECO CLASH 🌿", btn_main_eco_board: "🎲 玩 ECO BOARD GAME 🎲", btn_main_eco_clash_cert: "🌿 玩 ECO CLASH",
+            btn_main_eco_clash: "🌿 玩 ECO CLASH 🌿", btn_main_eco_board: "🎲 玩 ECO BOARD GAME 🎲", btn_main_eco_winsky: "☁️ 开始 ECO WIN SKY ☁️", btn_main_eco_clash_cert: "🌿 玩 ECO CLASH",
             label_name: "你叫什么名字？", placeholder_name: "输入英雄名字...", btn_mulai: "🚀 开始！",
             header_tag: "♻️ 地球英雄", header_xp: "⭐ 经验值：", slogan: "太棒了！你是真正的英雄！",
             wooden_sign: "为未来保护地球",
@@ -1076,8 +1111,9 @@
             btn_start_adventure: "🚀 冒険を始める", badge_game_bonus: "🎮 ボーナスゲーム",
             eco_clash_desc: "環境問題を解決するための戦略と知識のエキサイティングな挑戦",
             eco_board_desc: "知識と戦略を試す環境チャレンジ付きの楽しいボードアドベンチャー",
+            eco_winsky_desc: "空と空気を清潔に保つエキサイティングな冒険。",
             level_beginner_desc: "基本的な環境と Adiwiyata の問題", level_amateur_desc: "環境リテラシーと数値の問題", level_pro_desc: "環境ケーススタディと実際のソリューション",
-            btn_main_eco_clash: "🌿 ECO CLASH をプレイ 🌿", btn_main_eco_board: "🎲 ECO BOARD GAME をプレイ 🎲", btn_main_eco_clash_cert: "🌿 ECO CLASH をプレイ",
+            btn_main_eco_clash: "🌿 ECO CLASH をプレイ 🌿", btn_main_eco_board: "🎲 ECO BOARD GAME をプレイ 🎲", btn_main_eco_winsky: "☁️ ECO WIN SKY を始める ☁️", btn_main_eco_clash_cert: "🌿 ECO CLASH をプレイ",
             label_name: "名前は何ですか？", placeholder_name: "ヒーロー名を入力...", btn_mulai: "🚀 スタート！",
             header_tag: "♻️ 地球ヒーロー", header_xp: "⭐ XP：", slogan: "すごい！あなたは本当のヒーローです！",
             wooden_sign: "未来のために地球を守ろう",
@@ -1150,8 +1186,9 @@
             btn_start_adventure: "🚀 모험 시작", badge_game_bonus: "🎮 보너스 게임",
             eco_clash_desc: "환경 문제를 해결하기 위한 전략과 지식의 흥미진진한 도전",
             eco_board_desc: "지식과 전략을 시험하는 환경 도전이 있는 재미있는 보드 어드벤처",
+            eco_winsky_desc: "하늘과 공기를 깨끗하게 유지하는 흥미진진한 모험.",
             level_beginner_desc: "기본 환경 및 Adiwiyata 문제", level_amateur_desc: "환경 문해력 및 수리 문제", level_pro_desc: "환경 사례 연구 및 실제 솔루션",
-            btn_main_eco_clash: "🌿 ECO CLASH 플레이 🌿", btn_main_eco_board: "🎲 ECO BOARD GAME 플레이 🎲", btn_main_eco_clash_cert: "🌿 ECO CLASH 플레이",
+            btn_main_eco_clash: "🌿 ECO CLASH 플레이 🌿", btn_main_eco_board: "🎲 ECO BOARD GAME 플레이 🎲", btn_main_eco_winsky: "☁️ ECO WIN SKY 시작 ☁️", btn_main_eco_clash_cert: "🌿 ECO CLASH 플레이",
             label_name: "이름이 무엇인가요?", placeholder_name: "영웅 이름 입력...", btn_mulai: "🚀 시작!",
             header_tag: "♻️ 지구 영웅", header_xp: "⭐ XP:", slogan: "훌륭해요! 당신은 진정한 영웅입니다!",
             wooden_sign: "미래를 위해 지구를 지키자",
@@ -1224,8 +1261,9 @@
             btn_start_adventure: "🚀 ابدأ المغامرة", badge_game_bonus: "🎮 لعبة إضافية",
             eco_clash_desc: "تحدي مثير للاستراتيجية والمعرفة لحل المشاكل البيئية",
             eco_board_desc: "مغامرة لوحية ممتعة مع تحديات بيئية لاختبار معرفتك واستراتيجيتك",
+            eco_winsky_desc: "مغامرة مثيرة للحفاظ على السماء والهواء نظيفين.",
             level_beginner_desc: "أسئلة بيئية و Adiwiyata الأساسية", level_amateur_desc: "أسئلة محو الأمية البيئية والحساب", level_pro_desc: "دراسات حالة بيئية وحلول حقيقية",
-            btn_main_eco_clash: "🌿 العب ECO CLASH 🌿", btn_main_eco_board: "🎲 العب ECO BOARD GAME 🎲", btn_main_eco_clash_cert: "🌿 العب ECO CLASH",
+            btn_main_eco_clash: "🌿 العب ECO CLASH 🌿", btn_main_eco_board: "🎲 العب ECO BOARD GAME 🎲", btn_main_eco_winsky: "☁️ ابدأ ECO WIN SKY ☁️", btn_main_eco_clash_cert: "🌿 العب ECO CLASH",
             label_name: "ما اسمك؟", placeholder_name: "أدخل اسم البطل...", btn_mulai: "🚀 ابدأ!",
             header_tag: "♻️ بطل الأرض", header_xp: "⭐ XP:", slogan: "رائع! أنت بطل حقيقي!",
             wooden_sign: "احمِ الأرض من أجل المستقبل",
@@ -1292,14 +1330,12 @@
             || key;
     }
 
-    // Helper: ambil nilai objek multi-bahasa {id, en, zh, ja, ko, ar}
     function tObj(obj) {
         if (!obj) return '';
         if (typeof obj === 'string') return obj;
         return obj[currentLang] || obj['id'] || '';
     }
 
-    // Helper: ambil array multi-bahasa
     function tArr(arr) {
         if (!arr) return [];
         if (Array.isArray(arr)) return arr;
@@ -1390,7 +1426,7 @@
         trashCalculator: { organik: 0, kertas: 0, plastik: 0, logam: 0, kaca: 0, b3: 0, jumlahSiswa: 0, jumlahHariBulan: 30, totalPerHari: 0, totalPerSiswa: 0, totalPerMinggu: 0, totalPerBulan: 0, sudahDihitung: false },
         task4Complete: false,
         task5Complete: false, task5Checklist: { cek1: false, cek2: false, cek3: false },
-        // ⭐ MYSTERY BOX - MULTI BAHASA
+        // ⭐ MYSTERY BOX - MULTI BAHASA (23 SOAL)
         mysteryBoxes: [
             { 
                 q: {
@@ -2596,7 +2632,7 @@
     function completeTask5() { if (state.task5Complete) return; state.task5Complete = true; state.missionDone[4] = true; addXP(75); unlockBadge('pembaca-hebat'); renderTask5(); updateUI(); }
     function resetTask5() { state.task5Complete = false; state.missionDone[4] = false; state.task5Checklist = { cek1: false, cek2: false, cek3: false }; renderMission('5'); updateUI(); }
 
-    // ============ TASK 6: MYSTERY BOX - MULTI-BAHASA ============
+    // ============ TASK 6: MYSTERY BOX ============
     function renderTask6() {
         if (state.task6Complete) {
             missionContent.innerHTML = `<h2>🎁 ${t('tab_mission_6')}</h2><div class="mission-content"><div class="mission-desc">✅ ${t('feedback_correct')}</div><div style="margin:10px 0; font-size:2.2rem;">🏅 ${t('badge_detektif')}</div><div class="mystery-info"><strong>${t('mystery_complete_msg')}</strong><br>${t('mystery_answer_label')} ${state.mysteryCorrect.length} / 23</div><button class="btn-reset" onclick="resetTask6()" style="background:#ffa726; margin-top:12px;">${t('btn_repeat_mission')}</button></div>`;
@@ -2666,7 +2702,6 @@
         document.getElementById('badgePopupOk').addEventListener('click', function() { popup.classList.remove('show'); setTimeout(() => { if (document.body.contains(popup)) document.body.removeChild(popup); }, 400); });
     }
     
-    // openMysteryBox - MENGGUNAKAN tObj() dan tArr() UNTUK MULTI-BAHASA
     function openMysteryBox(idx) {
         console.log('🎁 openMysteryBox dipanggil dengan idx:', idx);
         const box = state.mysteryBoxes[idx];
@@ -2678,7 +2713,6 @@
         
         const optionLabels = ['A', 'B', 'C', 'D'];
         let optionsHtml = '';
-        // ⭐ Ambil opsi sesuai bahasa
         const boxOptions = tArr(box.options);
         boxOptions.forEach((opt, i) => { 
             optionsHtml += `<button class="option-btn" data-option="${i}" style="font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:16px;border:3px solid #a5d6a7;background:linear-gradient(180deg,#ffffff 0%,#f1f8e9 100%);cursor:pointer;text-align:left;font-size:0.98rem;color:#1b5e20;font-weight:700;width:100%;box-shadow:0 4px 0 #66bb6a;margin-bottom:10px;"><span style="font-family:'Fredoka',sans-serif;background:linear-gradient(180deg,#66bb6a,#43a047);color:white;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;flex-shrink:0;box-shadow:0 3px 0 #1b5e20;">${optionLabels[i]}</span><span>${opt}</span></button>`; 
@@ -2735,7 +2769,7 @@
     
     function resetTask6() { state.task6Complete = false; state.missionDone[5] = false; state.mysteryOpened = []; state.mysteryCorrect = []; renderMission('6'); updateUI(); }
 
-    // ============ TASK 7: AKSI NYATA - MULTI-BAHASA ============
+    // ============ TASK 7: AKSI NYATA ============
     function renderTask7() {
         if (state.task7Complete) {
             missionContent.innerHTML = `<h2>🌟 ${t('tab_mission_7')}</h2><div class="mission-content"><div class="mission-desc">✅ ${t('feedback_correct')}</div><div style="margin:10px 0; font-size:2.2rem;">🏅 ${t('badge_aktivis')}</div><div class="mystery-info" style="max-width:750px;"><strong>🌟 ${t('badge_aktivis')}! 🌟</strong></div><button class="btn-reset" onclick="resetTask7()" style="background:#ffa726; margin-top:12px;">${t('btn_repeat_mission')}</button></div>`;
@@ -2743,7 +2777,6 @@
         }
         const totalChallenges = state.actionChallenges.length;
         let completedCount = 0;
-        // ⭐ Gunakan tArr untuk mendapatkan array langkah sesuai bahasa
         state.actionChallenges.forEach(ch => { 
             const stepData = state.actionProgress[ch.id] || {}; 
             const stepsArr = tArr(ch.steps);
@@ -2754,10 +2787,8 @@
         let html = `<h2>🌟 ${t('tab_mission_7')}</h2><div class="mission-content"><div class="mission-desc">${descText}</div><div class="action-progress"><div class="progress-info"><span>${t('action_progress')}</span><span>${completedCount} / ${totalChallenges}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%;"></div></div></div><div class="action-list">`;
         state.actionChallenges.forEach(ch => {
             const stepData = state.actionProgress[ch.id] || {};
-            // ⭐ Gunakan tArr sesuai bahasa untuk mengecek progress
             const stepsArr = tArr(ch.steps);
             const allDone = stepsArr.every((_, i) => stepData[i] === true);
-            // ⭐ Gunakan tObj untuk judul & subtitle
             html += `<div class="action-card ${allDone ? 'completed' : ''}" data-id="${ch.id}" data-cat="${ch.cat}"><div class="action-icon">${ch.icon}</div><div class="action-info"><div class="action-title">${tObj(ch.title)}</div><div class="action-meta"><span>${tObj(ch.subtitle)}</span><span>•</span><span class="level">${t(ch.levelKey)}</span></div></div><div class="action-reward"><div class="points">+${ch.points}</div><span class="points-label">XP</span></div><div class="action-check">✓</div></div>`;
         });
         html += `</div>`;
@@ -2769,7 +2800,6 @@
         if (finishBtn) finishBtn.addEventListener('click', function() { if (state.task7Complete) return; state.task7Complete = true; state.missionDone[6] = true; addXP(100); unlockBadge('aktivis-adiwiyata'); renderTask7(); updateUI(); showBadgePopup(t('badge_aktivis'), t('mystery_complete_msg')); });
     }
     
-    // openActionDetail - MENGGUNAKAN tObj() dan tArr() UNTUK MULTI-BAHASA
     function openActionDetail(challengeId) {
         const ch = state.actionChallenges.find(c => c.id === challengeId);
         if (!ch) return;
@@ -2777,7 +2807,6 @@
         const overlay = document.createElement('div');
         overlay.className = 'action-detail-overlay show';
         
-        // ⭐ Ambil array langkah sesuai bahasa yang dipilih
         const stepArr = tArr(ch.steps);
         let stepsHtml = '';
         stepArr.forEach((step, i) => { 
@@ -2785,7 +2814,6 @@
             stepsHtml += `<li class="action-step ${checked ? 'checked' : ''}" data-step="${i}"><span class="step-num">${i + 1}</span><span class="step-text">${step}</span><span class="step-check">✓</span></li>`; 
         });
         
-        // ⭐ Gunakan tObj untuk title, subtitle, description
         overlay.innerHTML = `<div class="action-detail-box"><div class="action-detail-header"><h3>${tObj(ch.title)}</h3><button class="action-detail-close" id="actionDetailClose">✕</button></div><div class="action-detail-body"><div class="action-detail-badge"><div class="big-icon">${ch.icon}</div><div class="info"><h4>${tObj(ch.subtitle)}</h4><div class="lvl">${t(ch.levelKey)}</div><div class="reward">+${ch.points} XP</div></div></div><div class="action-detail-section"><h5>${t('action_desc')}</h5><p>${tObj(ch.description)}</p></div><div class="action-detail-section"><h5>${t('action_steps_title')}</h5><ul class="action-steps">${stepsHtml}</ul></div><button class="action-detail-btn" id="actionSaveBtn">${t('btn_mark_done')}</button></div></div>`;
         document.body.appendChild(overlay);
         overlay.querySelectorAll('.action-step').forEach(stepEl => {
@@ -2799,7 +2827,6 @@
         overlay.querySelector('#actionDetailClose').addEventListener('click', function() { if (document.body.contains(overlay)) document.body.removeChild(overlay); renderTask7(); });
         const saveBtn = overlay.querySelector('#actionSaveBtn');
         if (saveBtn) saveBtn.addEventListener('click', function() {
-            // ⭐ Gunakan stepArr yang sudah sesuai bahasa
             const allDoneNow = stepArr.every((_, i) => state.actionProgress[ch.id] && state.actionProgress[ch.id][i] === true);
             if (allDoneNow) { addXP(ch.points); if (document.body.contains(overlay)) document.body.removeChild(overlay); renderTask7(); }
             else { showFeedback(t('feedback_check_steps'), '#c62828', 2000); }
@@ -2883,7 +2910,7 @@
         applyLanguage(currentLang);
         const startAdventureBtnEl = document.getElementById('startAdventureBtn');
         if (startAdventureBtnEl) startAdventureBtnEl.addEventListener('click', function(e) { e.preventDefault(); e.stopPropagation(); showDashboard(); });
-        // 🎵 MUSIK DIHAPUS: Tidak ada kode musicBtn/bgMusic lagi
+        // 🎵 MUSIK DIHAPUS - tidak ada kode musicBtn/bgMusic
         if (homeFloatingBtn) homeFloatingBtn.addEventListener('click', function() { state.gameStarted = false; state.coverShown = true; showCoverPage(); nameInput.value = ''; nameInput.classList.remove('input-error'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
         if (startBtn) startBtn.addEventListener('click', startGame);
         if (nameInput) {
